@@ -11,6 +11,8 @@ export class MovieService {
 
   genreUrl = 'https://api.themoviedb.org/3/genre/movie/list';
 
+  topRatedUrl: string = 'https://api.themoviedb.org/3/movie/top_rated';
+
   constructor(private http: HttpClient) {}
   getTrending = () => {
     return this.http.get(this.trendingBaseUrl, {
@@ -22,7 +24,6 @@ export class MovieService {
     });
   };
 
-
   getGenreList = () => {
     return this.http.get(this.genreUrl, {
       params: {
@@ -31,4 +32,11 @@ export class MovieService {
     });
   };
 
+  getTopRated = () => {
+    return this.http.get(this.topRatedUrl, {
+      params: {
+        api_key: this.key,
+      },
+    });
+  };
 }
