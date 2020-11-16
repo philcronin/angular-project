@@ -1,4 +1,3 @@
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { MovieService } from '../movie.service';
