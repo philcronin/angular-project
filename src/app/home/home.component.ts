@@ -1,9 +1,10 @@
-import { Swiper } from 'swiper/bundle';
+import Swiper, { Navigation, Pagination } from 'swiper';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { SwiperComponent } from 'ngx-swiper-wrapper';
 
 import { MovieService } from '../movie.service';
+Swiper.use([Navigation, Pagination]);
 
 @Component({
   selector: 'app-home',
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
 
   config: SwiperOptions = {
     pagination: { el: '.swiper-pagination', clickable: true },
+  
     autoHeight: true,
     allowTouchMove: true,
     autoplay: {
@@ -54,6 +56,8 @@ export class HomeComponent implements OnInit {
     this.movieService.getGenreList().subscribe((response) => {
       this.genres = response;
     });
+   
+    const swiper = new Swiper("div", this.config)
   }
 
   // nextSlide() {
