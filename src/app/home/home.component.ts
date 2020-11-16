@@ -1,8 +1,12 @@
+
 import { Swiper } from 'swiper/bundle';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { SwiperComponent } from 'ngx-swiper-wrapper';
 // import { OwlOptions } from 'ngx-owl-carousel-o';
+
+import { Component, OnInit } from '@angular/core';
+
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -12,6 +16,7 @@ import { MovieService } from '../movie.service';
 })
 export class HomeComponent implements OnInit {
   trendingData: any;
+
   genres: any;
   // @ViewChild('usefulSwiper', { static: false }) usefulSwiper: SwiperComponent;
   constructor(private movieService: MovieService) {}
@@ -70,9 +75,14 @@ export class HomeComponent implements OnInit {
   //   nav: true,
   // };
 
+
+  constructor(private movieService: MovieService) {}
+
+
   ngOnInit(): void {
     this.movieService.getTrending().subscribe((response) => {
       this.trendingData = response;
+
     });
 
     this.movieService.getGenreList().subscribe((response) => {
@@ -89,4 +99,9 @@ export class HomeComponent implements OnInit {
   // slideToThis(index: any) {
   //   this.usefulSwiper.swiper.slideTo(index);
   // }
+
+      console.log(this.trendingData);
+    });
+  }
+
 }

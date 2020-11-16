@@ -8,7 +8,9 @@ export class MovieService {
   key: string = '4d6b6d705d0ccdf5166bc895195797a2';
   mediaType = 'movie';
   timeWindow = 'week';
+
   genreUrl = 'https://api.themoviedb.org/3/genre/movie/list';
+
   constructor(private http: HttpClient) {}
   getTrending = () => {
     return this.http.get(this.trendingBaseUrl, {
@@ -20,6 +22,7 @@ export class MovieService {
     });
   };
 
+
   getGenreList = () => {
     return this.http.get(this.genreUrl, {
       params: {
@@ -27,4 +30,5 @@ export class MovieService {
       },
     });
   };
+
 }
