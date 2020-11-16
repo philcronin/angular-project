@@ -9,12 +9,24 @@
       [slideRef]="slide"
       [genreList]="genres.genres"
     ></app-trending>
-    <!-- <div class="swiper-pagination"></div> -->
   </div>
   <!-- <div class="swiper-button-prev swiper-pagination"></div>
   <div class="swiper-button-next swiper-pagination"></div> -->
 </swiper>
 
-<app-top-rated></app-top-rated>
+<h2>Popular Movies</h2>
+<swiper [config]="config" class="swiper-container">
+  <div class="swiper-wrapper">
+    <app-top-rated
+      *ngFor="let slide of topRated?.results"
+      class="swiper-slide"
+      [slideRef]="slide"
+      [genreList]="genres.genres"
+    ></app-top-rated>
+  </div>
+  <!-- <div class="swiper-button-prev swiper-pagination"></div>
+  <div class="swiper-button-next swiper-pagination"></div> -->
+</swiper>
+
 <app-popular></app-popular>
 <app-footer class="footer"></app-footer>

@@ -15,12 +15,13 @@ export class HomeComponent implements OnInit {
   trendingData: any;
 
   genres: any;
+  topRated: any;
   // @ViewChild('usefulSwiper', { static: false }) usefulSwiper: SwiperComponent;
   constructor(private movieService: MovieService) {}
 
   config: SwiperOptions = {
     pagination: { el: '.swiper-pagination', clickable: true },
-  
+
     autoHeight: true,
     allowTouchMove: true,
     autoplay: {
@@ -56,8 +57,12 @@ export class HomeComponent implements OnInit {
     this.movieService.getGenreList().subscribe((response) => {
       this.genres = response;
     });
-   
-    const swiper = new Swiper("div", this.config)
+
+    this.movieService.getTopRated().subscribe((response) => {
+      this.topRated = response;
+    });
+
+    const swiper = new Swiper('div', this.config);
   }
 
   // nextSlide() {
