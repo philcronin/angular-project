@@ -1,5 +1,18 @@
 <app-header class="header"></app-header>
-<app-trending></app-trending>
+
+<swiper [config]="config" class="swiper-container">
+  <swiper class="swiper-button-prev"></swiper>
+  <swiper class="swiper-wrapper">
+    <app-trending
+      *ngFor="let slide of trendingData?.results"
+      class="swiper-slide"
+      [slideRef]="slide"
+      [genreList]="genres.genres"
+    ></app-trending>
+  </swiper>
+  <swiper [config]="config" class="swiper-button-next"></swiper>
+</swiper>
+
 <app-top-rated></app-top-rated>
 <app-popular></app-popular>
 <app-footer class="footer"></app-footer>
