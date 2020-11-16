@@ -14,7 +14,9 @@
   <div class="swiper-button-next swiper-pagination"></div> -->
 </swiper>
 
-<h2>Popular Movies</h2>
+<hr />
+
+<h2>Top-Rated Movies</h2>
 <swiper [config]="config" class="swiper-container">
   <div class="swiper-wrapper">
     <app-top-rated
@@ -24,9 +26,22 @@
       [genreList]="genres.genres"
     ></app-top-rated>
   </div>
+</swiper>
+
+<hr />
+
+<h2>Popular Movies</h2>
+<swiper [config]="config" class="swiper-container">
+  <div class="swiper-wrapper">
+    <app-popular
+      *ngFor="let slide of popular?.results"
+      class="swiper-slide"
+      [slideRef]="slide"
+      [genreList]="genres.genres"
+    ></app-popular>
+  </div>
   <!-- <div class="swiper-button-prev swiper-pagination"></div>
   <div class="swiper-button-next swiper-pagination"></div> -->
 </swiper>
 
-<app-popular></app-popular>
 <app-footer class="footer"></app-footer>

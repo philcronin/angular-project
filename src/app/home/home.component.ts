@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   genres: any;
   topRated: any;
+  popular: any;
   // @ViewChild('usefulSwiper', { static: false }) usefulSwiper: SwiperComponent;
   constructor(private movieService: MovieService) {}
 
@@ -60,6 +61,10 @@ export class HomeComponent implements OnInit {
 
     this.movieService.getTopRated().subscribe((response) => {
       this.topRated = response;
+    });
+
+    this.movieService.getPopular().subscribe((response) => {
+      this.popular = response;
     });
 
     const swiper = new Swiper('div', this.config);
