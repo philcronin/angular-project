@@ -1,0 +1,35 @@
+img {
+  height: 100px;
+  width: 100px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.nav-anchor {
+  text-decoration: none;
+}
+
+.search-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  margin: ;
+  list-style: none;
+}
+
+.search-bar {
+}
