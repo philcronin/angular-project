@@ -65,7 +65,17 @@ export class MovieService {
   };
 
   addToWatchList = (movie: Movie) => {
-    this.watchList.push(movie);
-    console.log(this.watchList);
+    const index = this.watchList.findIndex((item) => {
+      return item.id === movie.id;
+    });
+    if (index === -1) {
+      this.watchList.push(movie);
+    } else {
+      this.watchList.splice(index, 1);
+    }
+  };
+
+  getWatchList = () => {
+    return this.watchList;
   };
 }

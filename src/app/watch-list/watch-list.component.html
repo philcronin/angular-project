@@ -1,1 +1,14 @@
-<p>watch-list works!</p>
+<app-header></app-header>
+<section *ngFor="let movie of watchList">
+  <div>
+    <img src="{{ movie.image }}" alt="movie poster" />
+  </div>
+  <button
+    class="fa fa-film"
+    aria-hidden="true"
+    (click)="sendToWatchList(movie)"
+  ></button>
+  <div>
+    <p>{{ movie.title }}</p>
+  </div>
+</section>

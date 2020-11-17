@@ -70,8 +70,8 @@ export class TopRatedComponent implements OnInit {
   sendToWatchList = (movie: any) => {
     let newMovie: Movie = {
       title: movie.title,
-      genre: movie.genre,
-      image: movie.image,
+      genre: this.movieGenres,
+      image: this.image,
       id: movie.id,
     };
     this.watchListEvent.emit(newMovie);
