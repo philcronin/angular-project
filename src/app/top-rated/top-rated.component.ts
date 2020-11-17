@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SwiperOptions } from 'swiper';
+import { Movie } from '../interfaces/movie';
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { MovieService } from '../movie.service';
 export class TopRatedComponent implements OnInit {
   @Input() slideRef: any;
   @Input() genreList: any;
+  @Output() watchListEvent = new EventEmitter<Movie>();
   imageBaseUrl: string = 'https://image.tmdb.org/t/p/w185';
   image: string = '';
   movieGenres: any;
@@ -63,5 +65,15 @@ export class TopRatedComponent implements OnInit {
       }
     });
     this.movieGenres = movieGenres;
+  };
+
+  sendToWatchList = (movie: any) => {
+    let newMovie: Movie = {
+      title: movie.title,
+      genre: movie.genre,
+      image: movie.image,
+      id: movie.id,
+    };
+    this.watchListEvent.emit(newMovie);
   };
 }

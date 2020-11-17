@@ -2,6 +2,11 @@
   <div class="movie-poster">
     <img [src]="image" />
   </div>
+  <button
+    class="fa fa-film"
+    aria-hidden="true"
+    (click)="sendToWatchList(slideRef)"
+  ></button>
   <div>
     <p>{{ slideRef.original_title }}</p>
   </div>

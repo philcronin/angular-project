@@ -62,6 +62,7 @@ export class SearchComponent implements OnInit {
       title: movie.title,
       genre: movie.genre_ids,
       image: this.imageBaseUrl + movie.poster_path,
+      id: movie.id,
     };
     return newMovie;
   };
