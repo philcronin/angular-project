@@ -2,6 +2,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { SwiperComponent } from 'ngx-swiper-wrapper';
+import { Router } from '@angular/router';
 
 import { MovieService } from '../movie.service';
 Swiper.use([Navigation, Pagination]);
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
   topRated: any;
   popular: any;
   // @ViewChild('usefulSwiper', { static: false }) usefulSwiper: SwiperComponent;
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService, private router: Router) {}
 
   config: SwiperOptions = {
     pagination: { el: '.swiper-pagination', clickable: true },
@@ -70,13 +71,9 @@ export class HomeComponent implements OnInit {
     const swiper = new Swiper('div', this.config);
   }
 
-  // nextSlide() {
-  //   this.config.navigation(this.nextSlide);
-  // }
-  // previousSlide() {
-  //   this.usefulSwiper.swiper.slidePrev();
-  // }
-  // slideToThis(index: any) {
-  //   this.usefulSwiper.swiper.slideTo(index);
-  // }
+  search = (term: string): void => {
+    this.router.navigate(['/search'], {
+      queryParams: { query: term },
+    });
+  };
 }
