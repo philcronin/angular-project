@@ -15,6 +15,8 @@ export class MovieService {
 
   popularUrl: string = 'https://api.themoviedb.org/3/movie/popular';
 
+  searchUrl: string = 'https://api.themoviedb.org/3/search/multi';
+
   constructor(private http: HttpClient) {}
   getTrending = () => {
     return this.http.get(this.trendingBaseUrl, {
@@ -46,6 +48,15 @@ export class MovieService {
     return this.http.get(this.popularUrl, {
       params: {
         api_key: this.key,
+      },
+    });
+  };
+
+  runSearch = (term: string) => {
+    return this.http.get(this.searchUrl, {
+      params: {
+        api_key: this.key,
+        term: term,
       },
     });
   };
