@@ -8,6 +8,7 @@
       class="swiper-slide"
       [slideRef]="slide"
       [genreList]="genres.genres"
+      (watchListEvent)="sendToWatchList($event)"
     ></app-trending>
   </div>
   <!-- <div class="swiper-button-prev swiper-pagination"></div>
@@ -24,6 +25,7 @@
       class="swiper-slide"
       [slideRef]="slide"
       [genreList]="genres.genres"
+      (watchListEvent)="sendToWatchList($event)"
     ></app-top-rated>
   </div>
 </swiper>
@@ -38,6 +40,7 @@
       class="swiper-slide"
       [slideRef]="slide"
       [genreList]="genres.genres"
+      (watchListEvent)="sendToWatchList($event)"
     ></app-popular>
   </div>
   <!-- <div class="swiper-button-prev swiper-pagination"></div>

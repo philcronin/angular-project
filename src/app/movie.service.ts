@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Movie } from './interfaces/movie';
 @Injectable({
   providedIn: 'root',
 })
@@ -16,6 +17,8 @@ export class MovieService {
   popularUrl: string = 'https://api.themoviedb.org/3/movie/popular';
 
   searchUrl: string = 'https://api.themoviedb.org/3/search/multi';
+
+  watchList: Movie[] = [];
 
   constructor(private http: HttpClient) {}
   getTrending = () => {
@@ -59,5 +62,10 @@ export class MovieService {
         query: term,
       },
     });
+  };
+
+  addToWatchList = (movie: Movie) => {
+    this.watchList.push(movie);
+    console.log(this.watchList);
   };
 }

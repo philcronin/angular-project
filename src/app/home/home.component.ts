@@ -5,6 +5,7 @@ import { SwiperComponent } from 'ngx-swiper-wrapper';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { MovieService } from '../movie.service';
+import { Movie } from '../interfaces/movie';
 Swiper.use([Navigation, Pagination]);
 
 @Component({
@@ -79,4 +80,8 @@ export class HomeComponent implements OnInit {
 
     const swiper = new Swiper('div', this.config);
   }
+
+  sendToWatchList = (movie: Movie) => {
+    this.movieService.addToWatchList(movie);
+  };
 }

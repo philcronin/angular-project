@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Movie } from '../interfaces/movie';
 
 @Component({
   selector: 'app-trending',
@@ -8,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TrendingComponent implements OnInit {
   @Input() slideRef: any;
   @Input() genreList: any;
+  @Output() watchListEvent = new EventEmitter<Movie>();
   imageBaseUrl: string = 'https://image.tmdb.org/t/p/w185';
   image: string = '';
   movieGenres: any;
@@ -31,5 +33,15 @@ export class TrendingComponent implements OnInit {
       }
     });
     this.movieGenres = movieGenres;
+  };
+
+  sendToWatchList = (movie: any) => {
+    let newMovie: Movie = {
+      title: movie.title,
+      genre: movie.genre,
+      image: movie.image,
+      id: movie.id,
+    };
+    this.watchListEvent.emit(newMovie);
   };
 }
