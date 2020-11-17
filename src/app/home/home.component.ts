@@ -2,7 +2,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { SwiperComponent } from 'ngx-swiper-wrapper';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { MovieService } from '../movie.service';
 Swiper.use([Navigation, Pagination]);
@@ -19,7 +19,11 @@ export class HomeComponent implements OnInit {
   topRated: any;
   popular: any;
   // @ViewChild('usefulSwiper', { static: false }) usefulSwiper: SwiperComponent;
-  constructor(private movieService: MovieService, private router: Router) {}
+  constructor(
+    private movieService: MovieService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   config: SwiperOptions = {
     pagination: { el: '.swiper-pagination', clickable: true },
@@ -68,12 +72,11 @@ export class HomeComponent implements OnInit {
       this.popular = response;
     });
 
+    this.route.queryParamMap.subscribe((response) => {
+      const query = response.get('query');
+      this.movieService.runSearch(query!);
+    });
+
     const swiper = new Swiper('div', this.config);
   }
-
-  search = (term: string): void => {
-    this.router.navigate(['/search'], {
-      queryParams: { query: term },
-    });
-  };
 }

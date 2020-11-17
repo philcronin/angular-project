@@ -1,7 +1,6 @@
-import { Output } from '@angular/core';
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +8,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() inputEvent = new EventEmitter<string>();
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   getSearchTerm = (form: NgForm) => {
-    this.inputEvent.emit(form.value.search);
+    this.router.navigate(['/search'], {
+      queryParams: { query: form.value.search },
+    });
   };
 }

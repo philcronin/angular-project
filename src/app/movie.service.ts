@@ -56,7 +56,7 @@ export class MovieService {
     return this.http.get(this.searchUrl, {
       params: {
         api_key: this.key,
-        term: term,
+        query: term,
       },
     });
   };
