@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { Swiper } from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
@@ -48,6 +49,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HttpClientModule,
     BrowserAnimationsModule,
     SwiperModule,
+    FormsModule,
   ],
   providers: [
     {

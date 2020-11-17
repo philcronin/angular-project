@@ -7,7 +7,11 @@
         <li class="nav-item"><a class="nav-anchor" href="#">Watch List</a></li>
       </ol>
     </nav>
-    <form class="search-bar">
+    <form
+      #searchForm="ngForm"
+      class="search-bar"
+      (ngSubmit)="getSearchTerm(searchForm)"
+    >
       <input
         type="text"
         name="search"
@@ -15,6 +19,7 @@
         placeholder="titles, actors, genre"
         ngModel
       />
+      <button>Search</button>
     </form>
   </div>
 </header>
