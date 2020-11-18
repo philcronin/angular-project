@@ -1,5 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
+* {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2e0219;
+}
+
+h2 {
+  font-family: "Limelight", cursive;
+}
+
 .hidden {
   display: none;
 }
