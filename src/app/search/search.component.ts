@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Movie } from '../interfaces/movie';
@@ -12,12 +12,14 @@ import { MovieService } from '../movie.service';
 export class SearchComponent implements OnInit {
   @Input() slideRef: any;
   @Input() genreList: any;
+  @Output() showEvent = new EventEmitter<void>();
   searchData: any;
   filteredData: any = [];
   movies: Movie[] = [];
   imageBaseUrl: string = 'https://image.tmdb.org/t/p/w185';
   image: string = '';
   movieGenres: any;
+  movieInfo: any = document.querySelector('.info');
   constructor(
     private router: Router,
     private movieService: MovieService,
@@ -45,13 +47,13 @@ export class SearchComponent implements OnInit {
   };
 
   search = (query: string) => {
+    this.movies = [];
     this.movieService.runSearch(query).subscribe((response) => {
       this.searchData = response;
       this.searchData.results.filter((movie: any) => {
         if (movie.media_type === 'movie') {
           const movieResult = this.makeMovie(movie);
           this.movies.push(movieResult);
-        } else {
         }
       });
     });
@@ -92,5 +94,13 @@ export class SearchComponent implements OnInit {
       backdrop_path: 'https://image.tmdb.org/t/p/w185' + movie.backdrop_path,
     };
     this.movieService.addToWatchList(newMovie);
+  };
+
+  showMe = () => {
+    this.showEvent.emit();
+  };
+
+  heardYa = () => {
+    this.movieInfo.classList.toggle('hidden');
   };
 }
