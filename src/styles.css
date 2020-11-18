@@ -12,7 +12,7 @@ body {
 
 h2 {
   font-family: "Limelight", cursive;
-  color: #dabada;
+  color: #dababa;
   text-align: center;
   font-weight: bold;
   font-size: 40px;
@@ -23,7 +23,7 @@ h2 {
 }
 .fa-film {
   color: #1d0210;
-  background: #dabada;
+  background: #dababa;
   border-radius: 5px;
   padding: 8px;
   border-style: dotted;
@@ -34,6 +34,7 @@ h2 {
   margin-left: 14px;
 }
 .btn {
+  font-family: "Limelight", cursive;
   color: #dababa;
   background-color: #2e0219;
   border-radius: 7px;
@@ -53,13 +54,14 @@ h2 {
   padding: 5px;
   width: 75px;
   cursor: pointer;
+  font-family: "Limelight", cursive;
 }
 
 .movie-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #dabada;
+  color: #dababa;
   overflow: hidden;
 }
 
@@ -85,13 +87,6 @@ h2 {
   content: "next";
   color: black;
 }
-
-/* .swiper-button-prev,
-.swiper-container-rtl .swiper-button-next {
-  left: 10px;
-  right: auto;
-  color: black;
-} */
 
 .swiper-button-prev:after,
 .swiper-container-rtl .swiper-button-next:after {
