@@ -6,6 +6,7 @@ img {
 
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
@@ -33,5 +34,43 @@ img {
   list-style: none;
 }
 
-.search-bar {
+/* .search-bar {
+} */
+
+@media only screen and (min-width: 768px) {
+  img {
+    height: 92px;
+    width: 300px;
+    margin: 25px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-item {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+  }
+
+  .nav-anchor {
+    text-decoration: none;
+    color: #dababa;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: ;
+    list-style: none;
+  }
 }
