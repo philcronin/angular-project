@@ -1,12 +1,30 @@
+<div class="details-container hidden">
+  <div class="backdrop">
+    <img
+      src="https://image.tmdb.org/t/p/w185/{{ slideRef.backdrop_path }}"
+      alt=""
+    />
+  </div>
+  <div>
+    <h2 class="title">Title: {{ slideRef.title }}</h2>
+    <p class="summary">Summary</p>
+    <p class="overview">{{ slideRef.overview }}</p>
+    <p class="rating">Rating: {{ slideRef.vote_average }}</p>
+    <p class="release-date">Release Date: {{ slideRef.release_date }}</p>
+  </div>
+</div>
 <div class="movie-container swiper-slide">
   <div class="movie-poster">
     <img [src]="image" />
   </div>
-  <button
-    class="fa fa-film"
-    aria-hidden="true"
-    (click)="sendToWatchList(slideRef)"
-  ></button>
+  <div>
+    <button
+      class="fa fa-film"
+      aria-hidden="true"
+      (click)="sendToWatchList(slideRef)"
+    ></button
+    ><button>Details</button>
+  </div>
   <div>
     <p>{{ slideRef.original_title }}</p>
   </div>

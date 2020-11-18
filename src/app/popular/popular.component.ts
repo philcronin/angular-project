@@ -42,6 +42,10 @@ export class PopularComponent implements OnInit {
       genre: this.movieGenres,
       image: this.image,
       id: movie.id,
+      overview: movie.overview,
+      vote_average: movie.vote_average,
+      release_date: movie.release_date,
+      backdrop_path: 'https://image.tmdb.org/t/p/w185' + movie.backdrop_path,
     };
     this.watchListEvent.emit(newMovie);
   };
