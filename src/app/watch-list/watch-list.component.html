@@ -18,13 +18,13 @@
   <div>
     <img src="{{ movie.image }}" alt="movie poster" />
   </div>
-  <div>
+  <div class="btn-div">
     <button
       class="fa fa-film"
       aria-hidden="true"
       (click)="sendToWatchList(movie)"
     ></button
-    ><button>Details</button>
+    ><button class="btn">Details</button>
   </div>
   <div>
     <p>{{ movie.title }}</p>
