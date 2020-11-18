@@ -30,7 +30,6 @@ img {
 
 .nav-list {
   display: flex;
-  justify-content: ;
   list-style: none;
 }
 
@@ -70,7 +69,6 @@ img {
 
   .nav-list {
     display: flex;
-    justify-content: ;
     list-style: none;
   }
 }
