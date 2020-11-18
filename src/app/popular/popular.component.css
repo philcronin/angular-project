@@ -1,5 +1,6 @@
-.btn {
-  border-radius: 5px;
-  color: #dababa;
-  background: #2e0219;
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

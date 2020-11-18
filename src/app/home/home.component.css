@@ -10,3 +10,9 @@
 .swiper-slide {
   background-color: #4a001f;
 }
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
