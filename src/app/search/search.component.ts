@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
   image: string = '';
   movieGenres: any;
   movieInfo: any = document.querySelector('.info');
+  showId: number = -1;
   constructor(
     private router: Router,
     private movieService: MovieService,
@@ -102,5 +103,9 @@ export class SearchComponent implements OnInit {
 
   heardYa = () => {
     this.movieInfo.classList.toggle('hidden');
+  };
+
+  toggleShowId = (id: number) => {
+    this.showId === id ? (this.showId = -1) : (this.showId = id);
   };
 }
