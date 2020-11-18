@@ -63,6 +63,10 @@ export class SearchComponent implements OnInit {
       genre: movie.genre_ids,
       image: this.imageBaseUrl + movie.poster_path,
       id: movie.id,
+      overview: movie.overview,
+      vote_average: movie.vote_average,
+      release_date: movie.release_date,
+      backdrop_path: 'https://image.tmdb.org/t/p/w185' + movie.backdrop_path,
     };
     return newMovie;
   };
@@ -76,4 +80,17 @@ export class SearchComponent implements OnInit {
   //   });
   //   this.movieGenres = movieGenres;
   // };
+  sendToWatchList = (movie: any) => {
+    let newMovie: Movie = {
+      title: movie.title,
+      genre: movie.genres,
+      image: movie.image,
+      id: movie.id,
+      overview: movie.overview,
+      vote_average: movie.vote_average,
+      release_date: movie.release_date,
+      backdrop_path: 'https://image.tmdb.org/t/p/w185' + movie.backdrop_path,
+    };
+    this.movieService.addToWatchList(newMovie);
+  };
 }
