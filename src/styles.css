@@ -98,3 +98,12 @@ h2 {
   content: "prev";
   color: black;
 }
+
+.swiper.s-wrapper .swiper-wrapper .swiper-slide ::-webkit-scrollbar {
+  height: 1000%;
+  max-height: 1000%;
+  max-width: 100%;
+  width: 100%;
+  will-change: transform;
+  display: none;
+}
