@@ -28,6 +28,7 @@ h2 {
   padding: 8px;
   border-style: dotted;
   border-color: #1d0210;
+  cursor: pointer;
 }
 .btn-div {
   margin-left: 14px;
@@ -41,6 +42,7 @@ h2 {
   margin: 10px;
   width: 140px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .search-btn {
@@ -50,6 +52,7 @@ h2 {
   margin: 10px;
   padding: 5px;
   width: 75px;
+  cursor: pointer;
 }
 
 .movie-container {
@@ -75,4 +78,23 @@ h2 {
 .title-label {
   font-size: 18px;
   margin: 5px;
+}
+
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: "next";
+  color: black;
+}
+
+/* .swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  left: 10px;
+  right: auto;
+  color: black;
+} */
+
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-next:after {
+  content: "prev";
+  color: black;
 }

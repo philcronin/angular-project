@@ -33,15 +33,14 @@
         <p>{{ slide.overview }}</p>
       </div>
 
-    <img src="{{ slide.image }}" alt="movie poster" />
-    <div class="btn-div">
-      <button
-        class="fa fa-film"
-        aria-hidden="true"
-        (click)="sendToWatchList(slide)"
-      ></button>
-     
-
+      <img src="{{ slide.image }}" alt="movie poster" />
+      <div class="btn-div">
+        <button
+          class="fa fa-film"
+          aria-hidden="true"
+          (click)="sendToWatchList(slide)"
+        ></button>
+      </div>
     </div>
   </div>
 </section>
