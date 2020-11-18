@@ -73,11 +73,13 @@ h2 {
 .genre-label {
   padding-left: 5px;
   margin: 5px;
+  color: #dababa;
 }
 
 .title-label {
   font-size: 18px;
   margin: 5px;
+  color: #dababa;
 }
 
 .swiper-button-next:after,
@@ -106,4 +108,34 @@ h2 {
   width: 100%;
   will-change: transform;
   display: none;
+}
+
+.backdrop {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 20px;
+  color: black;
+}
+
+.overview {
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.rating {
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.release-date {
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.close-btn {
+  display: flex;
+  justify-content: center;
 }
