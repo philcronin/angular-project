@@ -1,5 +1,6 @@
 .search-results {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   margin: 50px;
@@ -14,6 +15,14 @@
   background-color: #4a001f;
   border: 3px solid #2e0219;
   flex: 1;
+}
+
+.details-container {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  border: 5px solid black;
+  background-image: linear-gradient(45deg, #d7d7d7 0%, #74354f 100%);
 }
 
 @media only screen and (min-width: 640px) {
