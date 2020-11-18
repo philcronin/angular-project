@@ -1,6 +1,6 @@
 <app-header class="header" (inputEvent)="search($event)"></app-header>
-<section>
-  <div *ngFor="let slide of movies">
+<section class="search-results">
+  <div class="it-is-me" *ngFor="let slide of movies">
     <div class="details-container hidden info" (showEvent)="heardYa()">
       <div class="backdrop">
         <img
@@ -16,6 +16,23 @@
         <p class="release-date">Release Date: {{ slide.release_date }}</p>
       </div>
     </div>
+
+    <div class="result">
+      <img src="{{ slide.image }}" alt="movie poster" />
+
+      <div>
+        <button
+          class="fa fa-film"
+          aria-hidden="true"
+          (click)="sendToWatchList(slide)"
+        ></button
+        ><button class="btn">Details</button>
+      </div>
+      <div class="result-details">
+        <p>{{ slide.title }}</p>
+        <p>{{ slide.overview }}</p>
+      </div>
+
     <img src="{{ slide.image }}" alt="movie poster" />
     <div class="btn-div">
       <button
@@ -23,7 +40,8 @@
         aria-hidden="true"
         (click)="sendToWatchList(slide)"
       ></button>
-      <button class="btn">Details</button>
+     
+
     </div>
   </div>
 </section>
