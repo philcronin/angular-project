@@ -16,6 +16,10 @@
   border: 3px solid #2e0219;
   flex: 1;
 }
+.result-details {
+  width: 50%;
+  color: #dababa;
+}
 
 .details-container {
   position: absolute;
@@ -43,11 +47,8 @@
   }
 
   .it-is-me {
-    width: 30%;
-    height: 441px;
-  }
-
-  .result-details {
-    width: 50%;
+    width: 48%;
+    height: 711px;
+    padding: 20px;
   }
 }
