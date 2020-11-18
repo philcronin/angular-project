@@ -21,3 +21,58 @@ h2 {
 .hidden {
   display: none;
 }
+.fa-film {
+  color: #1d0210;
+  background: #dabada;
+  border-radius: 5px;
+  padding: 8px;
+  border-style: dotted;
+  border-color: #1d0210;
+}
+.btn-div {
+  margin-left: 14px;
+}
+.btn {
+  color: #dababa;
+  background-color: #2e0219;
+  border-radius: 7px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 140px;
+  padding: 10px;
+}
+
+.search-btn {
+  border-radius: 7px;
+  background-color: #4a001f;
+  color: #dababa;
+  margin: 10px;
+  padding: 5px;
+  width: 75px;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #dabada;
+  overflow: hidden;
+}
+
+.genre-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.genre-label {
+  padding-left: 5px;
+  margin: 5px;
+}
+
+.title-label {
+  font-size: 18px;
+  margin: 5px;
+}

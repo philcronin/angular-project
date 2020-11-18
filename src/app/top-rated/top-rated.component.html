@@ -17,20 +17,20 @@
   <div class="movie-poster">
     <img [src]="image" />
   </div>
-  <div>
+  <div class="btn-div">
     <button
       class="fa fa-film"
       aria-hidden="true"
       (click)="sendToWatchList(slideRef)"
     ></button
-    ><button>Details</button>
+    ><button class="btn">Details</button>
   </div>
   <div>
-    <p>{{ slideRef.original_title }}</p>
+    <p class="title-label">{{ slideRef.original_title }}</p>
   </div>
   <div class="genre-container">
     <div class="genre" *ngFor="let genre of movieGenres">
-      <p>{{ genre }},</p>
+      <p class="genre-label">{{ genre }},</p>
     </div>
   </div>
 </div>
