@@ -1,4 +1,4 @@
-<div class="details-container hidden">
+<div class="details-container" *ngIf="showId === slideRef.id">
   <div class="backdrop">
     <img
       src="https://image.tmdb.org/t/p/w185/{{ slideRef.backdrop_path }}"
@@ -12,6 +12,7 @@
     <p class="rating">Rating: {{ slideRef.vote_average }}</p>
     <p class="release-date">Release Date: {{ slideRef.release_date }}</p>
   </div>
+  <button class="btn" (click)="toggleShowId(slideRef.id)">Close Details</button>
 </div>
 <div class="movie-container swiper-slide">
   <div class="movie-poster">
@@ -23,7 +24,7 @@
       aria-hidden="true"
       (click)="sendToWatchList(slideRef)"
     ></button
-    ><button class="btn">Details</button>
+    ><button class="btn" (click)="toggleShowId(slideRef.id)">Details</button>
   </div>
   <div>
     <p class="title-label">{{ slideRef.original_title }}</p>

@@ -1,5 +1,6 @@
 .movie-container {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   color: #dabada;
@@ -15,4 +16,13 @@
 
 .genre-label {
   padding-left: 5px;
+}
+
+.details-container {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  border: 5px solid black;
+
+  background-image: linear-gradient(45deg, #d7d7d7 0%, #74354f 100%);
 }

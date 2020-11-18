@@ -13,6 +13,7 @@ export class TrendingComponent implements OnInit {
   imageBaseUrl: string = 'https://image.tmdb.org/t/p/w185';
   image: string = '';
   movieGenres: any;
+  showId: number = -1;
   constructor() {}
 
   ngOnInit(): void {
@@ -47,5 +48,9 @@ export class TrendingComponent implements OnInit {
       backdrop_path: 'https://image.tmdb.org/t/p/w185' + movie.backdrop_path,
     };
     this.watchListEvent.emit(newMovie);
+  };
+
+  toggleShowId = (id: number) => {
+    this.showId === id ? (this.showId = -1) : (this.showId = id);
   };
 }
