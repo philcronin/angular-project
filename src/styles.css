@@ -12,6 +12,10 @@ body {
 
 h2 {
   font-family: "Limelight", cursive;
+  color: #dabada;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
 }
 
 .hidden {
