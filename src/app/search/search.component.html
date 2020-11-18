@@ -1,7 +1,7 @@
 <app-header class="header" (inputEvent)="search($event)"></app-header>
 <section>
   <div *ngFor="let slide of movies">
-    <div class="details-container hidden">
+    <div class="details-container hidden info" (showEvent)="heardYa()">
       <div class="backdrop">
         <img
           src="https://image.tmdb.org/t/p/w185/{{ slide.backdrop_path }}"
@@ -23,7 +23,7 @@
         aria-hidden="true"
         (click)="sendToWatchList(slide)"
       ></button
-      ><button>Details</button>
+      ><button (click)="showMe()">Details</button>
     </div>
   </div>
 </section>
