@@ -8,6 +8,7 @@ img {
   justify-content: center;
   align-content: center;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 .header {
@@ -40,6 +41,10 @@ img {
   padding: 0;
 }
 
+.search-btn {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 768px) {
   img {
     height: 92px;
@@ -52,6 +57,7 @@ img {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
   }
 
   .nav-item {
@@ -74,5 +80,9 @@ img {
   .nav-list {
     display: flex;
     list-style: none;
+  }
+
+  .search-btn {
+    cursor: pointer;
   }
 }
