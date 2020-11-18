@@ -17,13 +17,17 @@
       </div>
     </div>
     <img src="{{ slide.image }}" alt="movie poster" />
-    <div>
+    <div class="btn-div">
       <button
         class="fa fa-film"
         aria-hidden="true"
         (click)="sendToWatchList(slide)"
       ></button
-      ><button (click)="showMe()">Details</button>
+ button-styles
+      ><button class="btn">Details</button>
+
+      
+
     </div>
   </div>
 </section>

@@ -19,13 +19,13 @@
   <div class="movie-poster">
     <img [src]="image" />
   </div>
-  <div>
+  <div class="btn-div">
     <button
       class="fa fa-film"
       aria-hidden="true"
       (click)="sendToWatchList(slideRef)"
     ></button>
-    <button class="details-button">Details</button>
+    <button class="btn">Details</button>
   </div>
   <div>
     <p>{{ slideRef.original_title }}</p>
